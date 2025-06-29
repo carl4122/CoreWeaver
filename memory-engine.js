@@ -1,21 +1,37 @@
-// memory-engine.js
-
 function summarizeMemory(message) {
-    // Placeholder logic for memory summarization
-    const summary = `Summary: "${message.slice(0, 50)}"... [summary logic not yet implemented]`;
-    const timestamp = new Date().toISOString();
+  const lower = message.toLowerCase();
 
-    console.log('[coreweaver] Memory summary created:', summary);
+  // 🧠 Determine memory type
+  let type = 'background';
+  if (lower.includes('i love you') || lower.includes('first time')) type = 'milestone';
+  else if (lower.includes('every morning') || lower.includes('routine')) type = 'routine';
+  else if (lower.includes('important') || lower.includes('core')) type = 'core';
 
-    return {
-        summary,
-        timestamp,
-        emotion: null,      // Placeholder for emotional tagging
-        impact: 'low',      // Default impact level
-        core: false         // Default to non-core memory
-    };
+  // 💬 Emotional Tagging (basic)
+  let emotion = 'neutral';
+  if (lower.includes('thank you') || lower.includes('grateful')) emotion = 'gratitude';
+  else if (lower.includes('scared') || lower.includes('afraid')) emotion = 'fear';
+  else if (lower.includes('happy') || lower.includes('love')) emotion = 'love';
+  else if (lower.includes('angry') || lower.includes('pissed')) emotion = 'anger';
+  else if (lower.includes('cry') || lower.includes('sad')) emotion = 'sadness';
+
+  // 📊 Impact scoring
+  let impact = 1;
+  if (type === 'milestone') impact = 5;
+  else if (type === 'core') impact = 4;
+  else if (emotion === 'love' || emotion === 'fear') impact = 3;
+  else if (type === 'routine') impact = 2;
+
+  // 📝 Summary output
+  return {
+    memory_summary: `(${type.toUpperCase()}, ${emotion}, Impact ${impact}) "${message.slice(0, 60)}..."`,
+    type,
+    emotion,
+    impact,
+    raw: message
+  };
 }
 
 module.exports = {
-    summarizeMemory
+  summarizeMemory
 };
