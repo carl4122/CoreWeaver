@@ -1,9 +1,0 @@
-{
-  "id": "coreweaver-memory",
-  "name": "CoreWeaver Memory Engine",
-  "author": "Mike",
-  "version": "0.1.0",
-  "entry": "index.js",
-  "description": "A memory engine that filters and summarizes context in SillyTavern.",
-  "tags": ["memory", "experimental", "context"]
-}
