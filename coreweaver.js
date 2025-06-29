@@ -4,14 +4,16 @@ console.log('[CoreWeaver] Plugin initialized successfully.');
 
 function onNewMessage(data, { sendMessage }) {
   try {
-    // ✅ Simple test command
-    if (data.text?.toLowerCase().startsWith("/coreweaver_test")) {
-      const input = data.text.split(" ").slice(1).join(" ") || "No input";
+    const text = data.text?.toLowerCase() || '';
+
+    // ✅ Use safe non-slash trigger instead
+    if (text.startsWith('coreweaver test:')) {
+      const input = data.text.split(':').slice(1).join(':').trim() || 'No input';
       sendMessage(`✅ CoreWeaver is active. You said: "${input}"`);
       return;
     }
 
-    // Normal memory handling logic
+    // Normal memory logic
     const result = handleContext(data);
     return result;
 
