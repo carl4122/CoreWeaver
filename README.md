@@ -1,0 +1,1 @@
+CoreWeaver is a proprietary memory engine designed for use with SillyTavern and similar frontends. It intelligently filters, summarizes, and classifies conversational context in real time using structured memory tagging. Built for immersive AI roleplay and adaptive memory continuity.
