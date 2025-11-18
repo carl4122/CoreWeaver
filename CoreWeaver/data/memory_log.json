@@ -1,0 +1,18 @@
+[
+  {
+    "tags": ["guilt", "fear"],
+    "pressure_at_time": {"guilt": 4, "fear": 3}
+  },
+  {
+    "tags": ["guilt", "stagnation"],
+    "pressure_at_time": {"guilt": 5, "stagnation": 4}
+  },
+  {
+    "tags": ["comfort_seeking"],
+    "pressure_at_time": {"emotional_fatigue": 3}
+  },
+  {
+    "tags": ["guilt"],
+    "pressure_at_time": {"guilt": 6}
+  }
+]

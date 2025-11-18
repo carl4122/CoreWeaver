@@ -1,0 +1,6 @@
+{
+    "secondary_model": "gpt-3.5",
+    "auto_switch": true,
+    "emotion_update_frequency": 2,
+    "openai_api_key": "sk-REPLACE_WITH_YOUR_KEY"
+}
